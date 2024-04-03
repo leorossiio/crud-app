@@ -9,5 +9,14 @@ import { Component } from '@angular/core';
 
 
 export class SignupComponent {
+  usuario = {
+    email: '',
+    nome: '',
+    senha: ''
+  }
 
+  cadastrarUsuario(){
+    console.log(this.usuario);
+    
+  }
 }
