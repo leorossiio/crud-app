@@ -7,10 +7,20 @@ import { BehaviorSubject } from 'rxjs';
 export class UserService {
   private user = new BehaviorSubject<any>({});
   currentUser = this.user.asObservable();
+  users = [
+    {
+      email: 'admin',
+      senha: '1234'
+    }
+  ];
 
   constructor() { }
 
-  updateUser(newUser: any) {
-    this.user.next(newUser);
+  addUser(newUser: any) {
+    this.users.push(newUser);
+  }
+
+  getUsers() {
+    return this.users;
   }
 }
