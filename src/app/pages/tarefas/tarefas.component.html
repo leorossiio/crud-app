@@ -1,6 +1,20 @@
-<ul>
-  <li *ngFor="let task of task" [ngStyle]="{ 'text-decoration': task.completo ? 'line-through' : 'none' }">
-    {{ task.description }}
-    <button (click)="botaoConcluir(task)">{{ task.completo ? 'Desconcluir' : 'Concluir' }}</button>
-  </li>
-</ul>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Descrição</th>
+      <th scope="col">Status</th>
+      <th scope="col">Ação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of task" [ngClass]="{'table-success': task.completo}">
+      <td>{{ task.description }}</td>
+      <td>{{ task.completo ? 'Concluída' : 'Não concluída' }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="botaoConcluir(task)">
+          {{ task.completo ? 'Desconcluir' : 'Concluir' }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
