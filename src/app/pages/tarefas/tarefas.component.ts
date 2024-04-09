@@ -8,14 +8,28 @@ import { Component } from '@angular/core';
 export class TarefasComponent {
   
   task = [
-    { description: 'Tarefa 1', completo: false },
-    { description: 'Tarefa 2', completo: true },
-    { description: 'Tarefa 3', completo: false },
-    { description: 'Tarefa 4', completo: true },
-    { description: 'Tarefa 5', completo: false }
+    { description: 'Tarefa 1', status: 'Não concluída', editing: false },
+    { description: 'Tarefa 2', status: 'Não concluída', editing: false },
+    { description: 'Tarefa 3', status: 'Não concluída', editing: false },
+    { description: 'Tarefa 4', status: 'Não concluída', editing: false },
+    { description: 'Tarefa 5', status: 'Não concluída', editing: false }
   ];
 
   botaoConcluir(task: any){
-    task.completo = !task.completo;
+    if (task.status === 'Não concluída') {
+      task.status = 'Realizando';
+    } else if (task.status === 'Realizando') {
+      task.status = 'Concluída';
+    } else {
+      task.status = 'Não concluída';
+    }
+  }
+
+  editarTarefa(task: any) {
+    task.editing = !task.editing;
+  }
+
+  salvarEdicao(task: any) {
+    task.editing = false; // Saia do modo de edição
   }
 }
