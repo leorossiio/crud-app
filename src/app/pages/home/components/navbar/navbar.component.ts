@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  activeLink: string = 'home'; // Link ativo inicialmente
 
+  setActiveLink(link: string): void {
+    this.activeLink = link;
+  }
 }
