@@ -25,9 +25,14 @@
           {{ task.status === 'Não concluída' ? 'Iniciar' : task.status === 'Realizando' ? 'Realizando' : 'Concluída' }}
         </button>
         <span style=" margin-left: 5px; margin-right: 5px;"></span>
-        <button class="btn btn-info " style="width:110px;" (click)="editarTarefa(task)">
-          {{ task.editing ? 'Salvar' : 'Editar' }}
-        </button>
+        <button class="btn" 
+        [class.btn-warning]="!task.editing" 
+        [class.btn-success]="task.editing" 
+        style="width:110px;" 
+        (click)="editarTarefa(task)">
+  {{ task.editing ? 'Salvar' : 'Editar' }}
+</button>
+
       </td>
     </tr>
   </tbody>
