@@ -11,7 +11,7 @@ import { UsersComponent } from './pages/home/components/users/users.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WelcomeComponent } from './pages/home/components/welcome/welcome.component';
 import { FormsModule } from '@angular/forms';
-import { TarefasComponent } from './pages/tarefas/tarefas.component';
+import { TarefasComponent } from './pages/home/components/tarefas/tarefas.component';
 
 @NgModule({
   declarations: [
