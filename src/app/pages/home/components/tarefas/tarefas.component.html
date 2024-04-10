@@ -10,8 +10,8 @@
   <tbody>
     <tr *ngFor="let task of task" [ngClass]="{'table-warning': task.status === 'Realizando', 'table-success': task.status === 'Concluída'}">
       <td>
-        <div class="descricao-tarefa">
-          <span *ngIf="!task.editing">{{ task.description }}</span>
+        <div class="descricao-tarefa"*ngIf="!task.editing">
+          <span>{{ task.description }}</span>
         </div>
         
         <input type="text" class="form-control input-editar" *ngIf="task.editing" [(ngModel)]="task.description" (keyup.enter)="salvarEdicao(task)">
